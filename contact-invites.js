@@ -6,10 +6,10 @@
 
   function client() {
     if (db) return db;
-    db = window.__ilToolsClient || (window.supabase && window.supabase.createClient(URL, KEY, {
+    db = window.__ilbpToolsClient || (window.supabase && window.ILBPCreateClient(URL, KEY, {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
     }));
-    if (db) window.__ilToolsClient = db;
+    if (db) window.__ilbpToolsClient = db;
     return db;
   }
 

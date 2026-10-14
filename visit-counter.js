@@ -10,13 +10,13 @@
   var SUPABASE_KEY = "sb_publishable_-8u67PtkHJj1yRVWtOIkog_2skdsDcz";
 
   function getClient() {
-    if (window.__ilToolsClient) return window.__ilToolsClient;
+    if (window.__ilbpToolsClient) return window.__ilbpToolsClient;
     if (typeof window.makeClient === "function") return window.makeClient();
-    if (!window.supabase || !window.supabase.createClient) return null;
-    window.__ilToolsClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+    if (!window.supabase || !window.ILBPCreateClient) return null;
+    window.__ilbpToolsClient = window.ILBPCreateClient(SUPABASE_URL, SUPABASE_KEY, {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
     });
-    return window.__ilToolsClient;
+    return window.__ilbpToolsClient;
   }
 
   function text(value, fallback) {
