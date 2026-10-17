@@ -18,7 +18,7 @@
     }).then(function (response) {
       if (!response.ok) return response.text().then(function (text) { throw new Error("push-notify " + response.status + ": " + text); });
       return response;
-    }).catch(function (error) { console.error("[IL Chats Push] falha ao disparar push", error); });
+    }).catch(function (error) { console.error("[IL Bate Papo Push] falha ao disparar push", error); });
   }
 
   window.fetch = async function (input, init) {
@@ -44,11 +44,13 @@
             type: "message",
             sender_id: row.sender_id,
             conversation_id: row.conversation_id,
-            preview: row.body || "Você recebeu um arquivo."
+            attachment_type: row.attachment_type,
+            preview: row.body || ({audio:"Você recebeu uma mensagem de áudio.",video:"Você recebeu um vídeo.",image:"Você recebeu uma foto.",file:"Você recebeu um arquivo."})[row.attachment_type] || "Você recebeu uma mensagem."
           }, headers);
         }
       });
-    } catch (error) { console.error("[IL Chats Push] falha ao interpretar envio", error); }
+    } catch (error) { console.error("[IL Bate Papo Push] falha ao interpretar envio", error); }
     return response;
   };
 })();
+
