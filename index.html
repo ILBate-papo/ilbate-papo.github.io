@@ -365,7 +365,7 @@
   <script src="./read-receipts.js?v=20261014-call-media-3"></script>
   <script src="./ringtone.js?v=20261014-audio-2"></script>
   <script src="./ringback.js?v=20261014-audio-2"></script>
-  <script src="./native-alerts.js?v=20261013-android-7"></script>
+  <script src="./native-alerts.js?v=20261014-android-1"></script>
   <script src="./notifications.js?v=20261018-focus-call-1"></script>
   <script src="./push-sender.js?v=20261010-background-3"></script>
   <script src="./contact-invites.js?v=20261013-convites-5"></script>
@@ -498,6 +498,7 @@
 </script>
 <style id="il-gemini-smooth">.ilg-btn{touch-action:none!important;-webkit-user-select:none!important;user-select:none!important}.ilg-btn.ilg-dragging{transition:none!important;animation:none!important;will-change:left,top}</style><script>(function(){function bind(){var b=document.querySelector(".ilg-btn");if(!b||b.dataset.smoothDrag)return;b.dataset.smoothDrag="1";b.addEventListener("pointerdown",function(e){b.classList.add("ilg-dragging");if(e.pointerType==="touch")e.preventDefault()},{passive:false,capture:true});b.addEventListener("pointermove",function(e){if(b.classList.contains("ilg-dragging")&&e.pointerType==="touch")e.preventDefault()},{passive:false,capture:true});function done(){b.classList.remove("ilg-dragging")}b.addEventListener("pointerup",done,true);b.addEventListener("pointercancel",done,true)}new MutationObserver(bind).observe(document.documentElement,{childList:true,subtree:true});bind()})();</script><!-- notifications.js owns service-worker registration. -->
 <script src="./download-links.js?v=20261013-android-7"></script>
+<script src="./native-push-registration.js?v=20261018-1"></script>
 <script src="./media-layout-fixes.js?v=20261014-1"></script>
 </body>
 </html>
