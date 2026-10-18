@@ -1,4 +1,11 @@
 /* Mantém os controles da videochamada dentro da tela em janelas menores. */
+.call-screen video:not(.ilbp-video-ready){opacity:0!important;pointer-events:none!important}
+.call-screen.video:not(.ilbp-remote-ready) .call-person{display:block!important}
+.call-screen.video.ilbp-remote-ready .call-person{display:none!important}
+.call-screen .self-video{overflow:hidden!important}
+.call-screen .self-video video{width:100%;height:100%;object-fit:cover}
+.call-controls button svg,.incoming-call button svg{width:22px!important;height:22px!important;flex:0 0 22px!important}
+.call-screen .remote-video::-webkit-media-controls{display:none!important}
 .incoming-call{
   z-index:30000!important;
   visibility:visible!important;
